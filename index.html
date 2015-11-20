@@ -28,8 +28,10 @@
         </ul>
       </header>
       <section>
-        <h3>
-<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+<textarea id="articlein" style="min-width:400px;min-height:300px;" placeholder="把文章貼在這裡"></textarea>
+<button onclick="cyconvert();">Go</button>
+<hr>
+<textarea id="articleout" style="min-width:400px;min-height:300px;" placeholder="結果會出現在這裡"></textarea>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/cosecantTW">cosecantTW</a></p>
@@ -37,6 +39,11 @@
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript">
+    function cyconvert() {
+      console.log($("#articlein").val());
+    }
+    </script>
   </body>
 </html>
