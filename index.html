@@ -15,15 +15,15 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>Cystyleconverter</h1>
-        <p>把你的文章快速轉換成某知名政治人物發文格式！</p>
-
+        <h1>症原體產生器 V0.1</h1>
+        <p>把你的文章<br>快速轉換成<br>某知名政治人物發文格式！<br>只支援全形標點符號<br>以及中文文章<br></p>
+<p>（<br>斷詞還要再加<br>這個要架後端API<br>我懶了<br>）</p>
         <p class="view"><a href="https://github.com/cosecantTW/CYStyleConverter">View the Project on GitHub <small>cosecantTW/CYStyleConverter</small></a></p>
 
       </header>
       <section>
 <textarea id="articlein" style="min-width:400px;min-height:300px;" placeholder="把文章貼在這裡"></textarea><br>
-<button class="thebutton" onclick="cyconvert();">Go!</button>
+<button class="thebutton" onclick="cyconvert();">Go!</button><br>
 <hr>
 <textarea id="articleout" style="min-width:400px;min-height:300px;" placeholder="結果會出現在這裡"></textarea>
       </section>
@@ -40,9 +40,11 @@
       if (text.length > 0){
         text = text.replace(/，/g,"\n");
         text = text.replace(/。/g,"\n\n");
+        text = text.replace(/！/g,"！\n");
+        text = text.replace(/？/g,"？\n");
+        text = text.replace(/\n{3,}/g,"\n\n");
         $("#articleout").val(text);
       }
-      
     }
     </script>
   </body>
