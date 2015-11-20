@@ -20,16 +20,10 @@
 
         <p class="view"><a href="https://github.com/cosecantTW/CYStyleConverter">View the Project on GitHub <small>cosecantTW/CYStyleConverter</small></a></p>
 
-
-        <ul>
-          <li><a href="https://github.com/cosecantTW/CYStyleConverter/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/cosecantTW/CYStyleConverter/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/cosecantTW/CYStyleConverter">View On <strong>GitHub</strong></a></li>
-        </ul>
       </header>
       <section>
-<textarea id="articlein" style="min-width:400px;min-height:300px;" placeholder="把文章貼在這裡"></textarea>
-<button onclick="cyconvert();">Go</button>
+<textarea id="articlein" style="min-width:400px;min-height:300px;" placeholder="把文章貼在這裡"></textarea><br>
+<button class="thebutton" onclick="cyconvert();">Go!</button>
 <hr>
 <textarea id="articleout" style="min-width:400px;min-height:300px;" placeholder="結果會出現在這裡"></textarea>
       </section>
@@ -42,7 +36,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type="text/javascript">
     function cyconvert() {
-      console.log($("#articlein").val());
+      var text = $("#articlein").val();
+      if (text.length > 0){
+        text = text.replace(/，/g,"\n");
+        text = text.replace(/。/g,"\n\n");
+        $("#articleout").val(text);
+      }
+      
     }
     </script>
   </body>
